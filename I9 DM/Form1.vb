@@ -1164,14 +1164,15 @@ Public Class Form1
         Dim x As Integer
 
         Try
-            x = MsgBox("You are about to overlay an Excel File in the Roster Table ?", MsgBoxStyle.YesNo, "Run Roster Overlay")
-            If x = 6 Then
-                'User wants to run the Audits
-                ProjectTStripStatusLabel.Text = "Roster Overlay "
-                Me.Refresh()
-                'Runs the method to process the Excel Spreadsheet
-                ImportDataFromExcel(ExcelOpenFileDialog.FileName)
-            End If
+            'x = MsgBox("You are about to overlay an Excel File in the Roster Table ?", MsgBoxStyle.YesNo, "Run Roster Overlay")
+            'If x = 6 Then
+            'User wants to run the Audits
+            ProjectTStripStatusLabel.Text = "Roster Overlay "
+            Me.Refresh()
+            'Runs the method to process the Excel Spreadsheet
+            RosterExcelFilePath = ExcelOpenFileDialog.FileName
+            ImportDataFromExcel(ExcelOpenFileDialog.FileName)
+            'End If
 
         Catch ex As Exception
             MsgBox(ex.ToString)

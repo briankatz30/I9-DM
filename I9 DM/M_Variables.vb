@@ -10,6 +10,7 @@ Module M_Variables
     Public RosterTableExsists, I9TableExsists, MakeTable As Boolean
     Public RosterMatch As Integer
     Public RosterNotMatchCount As Integer
+    Public RosterExcelFilePath As String
 
     ' Database Variables
     'Public Variables for Main Project Db Connection
