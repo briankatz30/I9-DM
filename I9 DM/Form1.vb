@@ -1161,7 +1161,7 @@ Public Class Form1
         '*****************************************************
         ' Sub Routine that runs when the user selects the file to import.
         '*****************************************************
-        Dim x As Integer
+        'Dim x As Integer
 
         Try
             'x = MsgBox("You are about to overlay an Excel File in the Roster Table ?", MsgBoxStyle.YesNo, "Run Roster Overlay")

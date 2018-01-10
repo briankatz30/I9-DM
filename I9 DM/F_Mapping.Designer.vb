@@ -25,14 +25,15 @@ Partial Class F_Mapping
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FieldMappingGV = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ForeginKeyComboBox = New System.Windows.Forms.ComboBox()
         Me.PrimaryKeyComboBox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RunButton = New System.Windows.Forms.Button()
+        Me.CloseButton = New System.Windows.Forms.Button()
         CType(Me.FieldMappingGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,13 +58,34 @@ Partial Class F_Mapping
         Me.FieldMappingGV.Size = New System.Drawing.Size(821, 638)
         Me.FieldMappingGV.TabIndex = 0
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Overlay"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Excel Source Field Names"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Column2.Width = 300
+        '
+        'Column3
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column3.HeaderText = "Map To"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
         'ForeginKeyComboBox
         '
         Me.ForeginKeyComboBox.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeginKeyComboBox.FormattingEnabled = True
         Me.ForeginKeyComboBox.Location = New System.Drawing.Point(199, 49)
         Me.ForeginKeyComboBox.Name = "ForeginKeyComboBox"
-        Me.ForeginKeyComboBox.Size = New System.Drawing.Size(218, 23)
+        Me.ForeginKeyComboBox.Size = New System.Drawing.Size(187, 23)
         Me.ForeginKeyComboBox.TabIndex = 1
         '
         'PrimaryKeyComboBox
@@ -72,7 +94,7 @@ Partial Class F_Mapping
         Me.PrimaryKeyComboBox.FormattingEnabled = True
         Me.PrimaryKeyComboBox.Location = New System.Drawing.Point(199, 12)
         Me.PrimaryKeyComboBox.Name = "PrimaryKeyComboBox"
-        Me.PrimaryKeyComboBox.Size = New System.Drawing.Size(218, 23)
+        Me.PrimaryKeyComboBox.Size = New System.Drawing.Size(187, 23)
         Me.PrimaryKeyComboBox.TabIndex = 2
         '
         'Label1
@@ -95,43 +117,33 @@ Partial Class F_Mapping
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "ForeginKey (Roster Destination)"
         '
-        'Button1
+        'RunButton
         '
-        Me.Button1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(757, 25)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(76, 27)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Run"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.RunButton.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RunButton.Location = New System.Drawing.Point(756, 9)
+        Me.RunButton.Name = "RunButton"
+        Me.RunButton.Size = New System.Drawing.Size(76, 27)
+        Me.RunButton.TabIndex = 5
+        Me.RunButton.Text = "Run"
+        Me.RunButton.UseVisualStyleBackColor = True
         '
-        'Column1
+        'CloseButton
         '
-        Me.Column1.HeaderText = "Overlay"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Excel Source Field Names"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Column2.Width = 300
-        '
-        'Column3
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column3.HeaderText = "Map To"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.CloseButton.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CloseButton.Location = New System.Drawing.Point(756, 42)
+        Me.CloseButton.Name = "CloseButton"
+        Me.CloseButton.Size = New System.Drawing.Size(76, 27)
+        Me.CloseButton.TabIndex = 6
+        Me.CloseButton.Text = "Close"
+        Me.CloseButton.UseVisualStyleBackColor = True
         '
         'F_Mapping
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(843, 728)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(844, 728)
+        Me.Controls.Add(Me.CloseButton)
+        Me.Controls.Add(Me.RunButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PrimaryKeyComboBox)
@@ -151,8 +163,9 @@ Partial Class F_Mapping
     Friend WithEvents PrimaryKeyComboBox As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents RunButton As Button
     Friend WithEvents Column1 As DataGridViewCheckBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents CloseButton As Button
 End Class
