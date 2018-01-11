@@ -1,4 +1,6 @@
-﻿Public Class F_Mapping
+﻿Imports System.ComponentModel
+
+Public Class F_Mapping
 
     Private Sub F_Mapping_Load(sender As Object, e As EventArgs) Handles Me.Load
         '*********************************************
@@ -18,8 +20,10 @@
         Dim SqlStmt As String = Nothing
         Dim MyCommand As New System.Data.OleDb.OleDbDataAdapter
         Dim MyConnection As System.Data.OleDb.OleDbConnection
+        Dim oledbAdapter As OleDbDataAdapter
         Dim Ds As New DataSet
         Dim DTable As New DataTable
+        Dim Rs As New DataSet
         Dim FieldNameList As New List(Of String)()
         Dim i As Integer = 0
         Dim x As Integer
@@ -80,8 +84,21 @@
                 c += 1
             Next
 
+            'Refreshes the Grid view with the newly edited records
+            Form1.ToolStripStatusLabel2.Text = "Loading Roster Data...."
+            oledbAdapter = New OleDbDataAdapter("EXEC dbo.SP_LOAD_ROSTER", Client_Conn)
+            oledbAdapter.Fill(Rs)
+            Form1.RosterDataGridView.DataSource = Rs.Tables(0)
+            Form1.RosterDataGridView.Refresh()
+            Rs.Dispose()
+            oledbAdapter.Dispose()
+
             MsgBox("Roster Updated", vbInformation)
-            FieldMappingGV.Dispose()
+
+            If FieldMappingGV.Columns.Contains("RosterColumnField") Then
+                FieldMappingGV.Columns.Remove("RosterColumnField")
+            End If
+
             Me.Close()
 
         Catch ex As Exception
@@ -117,8 +134,18 @@
     End Sub
 
     Private Sub CloseButton_Click(sender As Object, e As EventArgs) Handles CloseButton.Click
-
+        If FieldMappingGV.Columns.Contains("RosterColumnField") Then
+            FieldMappingGV.Columns.Remove("RosterColumnField")
+        End If
         Me.Close()
+
+    End Sub
+
+    Private Sub F_Mapping_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+        If FieldMappingGV.Columns.Contains("RosterColumnField") Then
+            FieldMappingGV.Columns.Remove("RosterColumnField")
+        End If
 
     End Sub
 

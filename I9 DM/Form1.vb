@@ -4,6 +4,7 @@ Public Class Form1
 
     Dim StrFilePath As String
     Dim Res As New Resizer
+    Dim WhichGrid As DataGridView
 
     Private Sub RosterAllErrorsViewTSMenuItem_Click(sender As Object, e As EventArgs) Handles RosterAllErrorsViewTSMenuItem.Click
         '*************************************************
@@ -1178,6 +1179,54 @@ Public Class Form1
             MsgBox(ex.ToString)
 
         End Try
+
+    End Sub
+
+    Private Sub DGVNotMatchTrans_CellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGVNotMatchTrans.CellMouseDown
+        '**************************************************
+        ' Sub Routine to popup the right click menu for the GridView
+        '**************************************************
+        If e.Button = MouseButtons.Right Then
+            ExportMenuStrip.Show(MousePosition)
+            WhichGrid = DGVNotMatchTrans
+        End If
+
+    End Sub
+
+    Private Sub DGVRosterMatch_CellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGVRosterMatch.CellMouseDown
+        '**************************************************
+        ' Sub Routine to popup the right click menu for the GridView
+        '**************************************************
+        If e.Button = MouseButtons.Right Then
+            ExportMenuStrip.Show(MousePosition)
+            WhichGrid = DGVRosterMatch
+        End If
+
+    End Sub
+
+    Private Sub ExporttoExcelFromGrid_Click(sender As Object, e As EventArgs) Handles ExporttoExcelFromGrid.Click
+        '*************************************************
+        ' Sub Routine to Export the GridView to an Excel Spreadsheet
+        '*************************************************
+        Me.Cursor = Cursors.WaitCursor
+        'Export to Excel from the Menu Item
+
+        Export_Excel(WhichGrid)
+
+        Me.Cursor = Cursors.Default
+
+    End Sub
+
+    Private Sub TextDelimitedFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TextDelimitedFileToolStripMenuItem.Click
+        '*************************************************
+        ' Sub Routine to Export the GridView to an Excel Spreadsheet
+        '*************************************************
+        Me.Cursor = Cursors.WaitCursor
+        'Export to Excel from the Menu Item
+
+        Export_Grid_Text_File(RosterDataGridView)
+
+        Me.Cursor = Cursors.Default
 
     End Sub
 

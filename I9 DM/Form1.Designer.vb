@@ -353,9 +353,6 @@ Partial Class Form1
         Me.RosterImportTSMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.TranscriptImportTSMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ElectronicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SpreadsheetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -363,10 +360,8 @@ Partial Class Form1
         Me.RosterOverlayTSMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.DeleteRosterTableMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TranscriptToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AppendToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DeleteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TranscriptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SelectAProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSProjectComboBox = New System.Windows.Forms.ToolStripComboBox()
         Me.RosterOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
@@ -406,15 +401,16 @@ Partial Class Form1
         Me.DateToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DateToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TranlatorsignatureToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SHowAuditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowAuditToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewOrphanTSMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewSection3TSMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.DisplayAllToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RunMatchToRosterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AxAcroPDF1 = New AxAcroPDFLib.AxAcroPDF()
         Me.ExcelOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.ExportMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ExporttoExcelFromGrid = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1.SuspendLayout()
         Me.RosterTab.SuspendLayout()
         CType(Me.RosterDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -434,6 +430,7 @@ Partial Class Form1
         Me.RosterContextMenuStrip.SuspendLayout()
         Me.TranscriptMenuStrip.SuspendLayout()
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ExportMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -3935,7 +3932,7 @@ Partial Class Form1
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProjectTStripStatusLabel, Me.StatusLabelGridCount, Me.StatusLabelTransCount, Me.TSProgressBar, Me.ToolStripStatusLabel2, Me.DateTStripStatusLabel})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 958)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(2025, 33)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1895, 33)
         Me.StatusStrip1.TabIndex = 1
         Me.StatusStrip1.Text = "StatusStrip"
         '
@@ -3952,7 +3949,7 @@ Partial Class Form1
         Me.ProjectTStripStatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ProjectTStripStatusLabel.Name = "ProjectTStripStatusLabel"
         Me.ProjectTStripStatusLabel.Padding = New System.Windows.Forms.Padding(5)
-        Me.ProjectTStripStatusLabel.Size = New System.Drawing.Size(599, 28)
+        Me.ProjectTStripStatusLabel.Size = New System.Drawing.Size(534, 28)
         Me.ProjectTStripStatusLabel.Spring = True
         Me.ProjectTStripStatusLabel.Text = "Project - "
         Me.ProjectTStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3995,7 +3992,7 @@ Partial Class Form1
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.ToolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.Sunken
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(599, 28)
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(534, 28)
         Me.ToolStripStatusLabel2.Spring = True
         '
         'DateTStripStatusLabel
@@ -4017,13 +4014,13 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.RemoveToolStripMenuItem, Me.SelectAProjectToolStripMenuItem, Me.TSProjectComboBox})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(2025, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1895, 31)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ImportToolStripMenuItem, Me.ExportToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ImportToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(43, 27)
@@ -4084,25 +4081,6 @@ Partial Class Form1
         Me.ElectronicToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.ElectronicToolStripMenuItem.Text = "Electronic"
         '
-        'ExportToolStripMenuItem
-        '
-        Me.ExportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SpreadsheetToolStripMenuItem, Me.TextFileToolStripMenuItem})
-        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
-        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
-        Me.ExportToolStripMenuItem.Text = "Export"
-        '
-        'SpreadsheetToolStripMenuItem
-        '
-        Me.SpreadsheetToolStripMenuItem.Name = "SpreadsheetToolStripMenuItem"
-        Me.SpreadsheetToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.SpreadsheetToolStripMenuItem.Text = "Spreadsheet"
-        '
-        'TextFileToolStripMenuItem
-        '
-        Me.TextFileToolStripMenuItem.Name = "TextFileToolStripMenuItem"
-        Me.TextFileToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.TextFileToolStripMenuItem.Text = "Text File"
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
@@ -4116,7 +4094,7 @@ Partial Class Form1
         '
         'RemoveToolStripMenuItem
         '
-        Me.RemoveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RosterToolStripMenuItem, Me.TranscriptToolStripMenuItem1})
+        Me.RemoveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RosterToolStripMenuItem, Me.TranscriptToolStripMenuItem})
         Me.RemoveToolStripMenuItem.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RemoveToolStripMenuItem.Name = "RemoveToolStripMenuItem"
         Me.RemoveToolStripMenuItem.Size = New System.Drawing.Size(44, 27)
@@ -4146,29 +4124,18 @@ Partial Class Form1
         Me.DeleteRosterTableMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.DeleteRosterTableMenuItem.Text = "Delete"
         '
-        'TranscriptToolStripMenuItem1
+        'TranscriptToolStripMenuItem
         '
-        Me.TranscriptToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AppendToolStripMenuItem1, Me.ToolStripSeparator3, Me.DeleteToolStripMenuItem1})
-        Me.TranscriptToolStripMenuItem1.Name = "TranscriptToolStripMenuItem1"
-        Me.TranscriptToolStripMenuItem1.Size = New System.Drawing.Size(136, 22)
-        Me.TranscriptToolStripMenuItem1.Text = "Transcript"
+        Me.TranscriptToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem})
+        Me.TranscriptToolStripMenuItem.Name = "TranscriptToolStripMenuItem"
+        Me.TranscriptToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.TranscriptToolStripMenuItem.Text = "Transcript"
         '
-        'AppendToolStripMenuItem1
+        'DeleteToolStripMenuItem
         '
-        Me.AppendToolStripMenuItem1.Name = "AppendToolStripMenuItem1"
-        Me.AppendToolStripMenuItem1.Size = New System.Drawing.Size(124, 22)
-        Me.AppendToolStripMenuItem1.Text = "Overlay"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(121, 6)
-        '
-        'DeleteToolStripMenuItem1
-        '
-        Me.DeleteToolStripMenuItem1.Name = "DeleteToolStripMenuItem1"
-        Me.DeleteToolStripMenuItem1.Size = New System.Drawing.Size(124, 22)
-        Me.DeleteToolStripMenuItem1.Text = "Delete"
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'SelectAProjectToolStripMenuItem
         '
@@ -4373,15 +4340,16 @@ Partial Class Form1
         'TranscriptMenuStrip
         '
         Me.TranscriptMenuStrip.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TranscriptMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3, Me.ToolStripMenuItem4})
+        Me.TranscriptMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.TranscriptMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3})
         Me.TranscriptMenuStrip.Name = "TranscriptMenuStrip"
-        Me.TranscriptMenuStrip.Size = New System.Drawing.Size(180, 48)
+        Me.TranscriptMenuStrip.Size = New System.Drawing.Size(111, 26)
         '
         'ToolStripMenuItem3
         '
-        Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowAuditToolStripMenuItem, Me.SHowAuditToolStripMenuItem1, Me.RunMatchToRosterToolStripMenuItem})
+        Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowAuditToolStripMenuItem, Me.ShowAuditToolStripMenuItem1, Me.RunMatchToRosterToolStripMenuItem})
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(179, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(110, 22)
         Me.ToolStripMenuItem3.Text = "Audit"
         '
         'ShowAuditToolStripMenuItem
@@ -4421,34 +4389,34 @@ Partial Class Form1
         Me.TranlatorsignatureToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.TranlatorsignatureToolStripMenuItem.Text = "Translator QC "
         '
-        'SHowAuditToolStripMenuItem1
+        'ShowAuditToolStripMenuItem1
         '
-        Me.SHowAuditToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewOrphanTSMenuItem, Me.ViewSection3TSMenuItem, Me.ToolStripSeparator7, Me.DisplayAllToolStripMenuItem2})
-        Me.SHowAuditToolStripMenuItem1.Name = "SHowAuditToolStripMenuItem1"
-        Me.SHowAuditToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
-        Me.SHowAuditToolStripMenuItem1.Text = "View"
+        Me.ShowAuditToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewOrphanTSMenuItem, Me.ViewSection3TSMenuItem, Me.ToolStripSeparator7, Me.DisplayAllToolStripMenuItem2})
+        Me.ShowAuditToolStripMenuItem1.Name = "ShowAuditToolStripMenuItem1"
+        Me.ShowAuditToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+        Me.ShowAuditToolStripMenuItem1.Text = "View"
         '
         'ViewOrphanTSMenuItem
         '
         Me.ViewOrphanTSMenuItem.Name = "ViewOrphanTSMenuItem"
-        Me.ViewOrphanTSMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.ViewOrphanTSMenuItem.Size = New System.Drawing.Size(209, 22)
         Me.ViewOrphanTSMenuItem.Text = "Orphan I9s"
         '
         'ViewSection3TSMenuItem
         '
         Me.ViewSection3TSMenuItem.Name = "ViewSection3TSMenuItem"
-        Me.ViewSection3TSMenuItem.Size = New System.Drawing.Size(142, 22)
-        Me.ViewSection3TSMenuItem.Text = "Section 3"
+        Me.ViewSection3TSMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.ViewSection3TSMenuItem.Text = "Stand Alone Section 3"
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(206, 6)
         '
         'DisplayAllToolStripMenuItem2
         '
         Me.DisplayAllToolStripMenuItem2.Name = "DisplayAllToolStripMenuItem2"
-        Me.DisplayAllToolStripMenuItem2.Size = New System.Drawing.Size(142, 22)
+        Me.DisplayAllToolStripMenuItem2.Size = New System.Drawing.Size(209, 22)
         Me.DisplayAllToolStripMenuItem2.Text = "Display All"
         '
         'RunMatchToRosterToolStripMenuItem
@@ -4456,12 +4424,6 @@ Partial Class Form1
         Me.RunMatchToRosterToolStripMenuItem.Name = "RunMatchToRosterToolStripMenuItem"
         Me.RunMatchToRosterToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.RunMatchToRosterToolStripMenuItem.Text = "Match to Roster"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(179, 22)
-        Me.ToolStripMenuItem4.Text = "Export Transcript"
         '
         'AxAcroPDF1
         '
@@ -4477,6 +4439,19 @@ Partial Class Form1
         '
         Me.ExcelOpenFileDialog.FileName = "OpenFileDialog1"
         '
+        'ExportMenuStrip
+        '
+        Me.ExportMenuStrip.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ExportMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExporttoExcelFromGrid})
+        Me.ExportMenuStrip.Name = "ExportMenuStrip"
+        Me.ExportMenuStrip.Size = New System.Drawing.Size(151, 26)
+        '
+        'ExporttoExcelFromGrid
+        '
+        Me.ExporttoExcelFromGrid.Name = "ExporttoExcelFromGrid"
+        Me.ExporttoExcelFromGrid.Size = New System.Drawing.Size(150, 22)
+        Me.ExporttoExcelFromGrid.Text = "Export to Excel"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4485,7 +4460,7 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(2042, 873)
+        Me.ClientSize = New System.Drawing.Size(1291, 686)
         Me.Controls.Add(Me.ImageSupPrev)
         Me.Controls.Add(Me.ImageSupNext)
         Me.Controls.Add(Me.ImagePage2)
@@ -4529,6 +4504,7 @@ Partial Class Form1
         Me.RosterContextMenuStrip.ResumeLayout(False)
         Me.TranscriptMenuStrip.ResumeLayout(False)
         CType(Me.AxAcroPDF1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ExportMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -4546,25 +4522,18 @@ Partial Class Form1
     Friend WithEvents RosterImportTSMenu As ToolStripMenuItem
     Friend WithEvents TranscriptImportTSMenu As ToolStripMenuItem
     Friend WithEvents ElectronicToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SpreadsheetToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextFileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RemoveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RosterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RosterOverlayTSMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteRosterTableMenuItem As ToolStripMenuItem
-    Friend WithEvents TranscriptToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents AppendToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents DeleteToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ElectronicTab As TabPage
     Friend WithEvents Section1Tab As TabPage
     Friend WithEvents Section2Tab As TabPage
     Friend WithEvents Section3Tab As TabPage
     Friend WithEvents AxAcroPDF1 As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents NewProjectTStripMenu As ToolStripMenuItem
     Friend WithEvents RosterOpenFileDialog As OpenFileDialog
@@ -4899,13 +4868,12 @@ Partial Class Form1
     Friend WithEvents DisplayAllToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TranscriptMenuStrip As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents ShowAuditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OrphanI9sToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Section3StandaloneToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DateToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents DateToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents SHowAuditToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ShowAuditToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ViewOrphanTSMenuItem As ToolStripMenuItem
     Friend WithEvents ViewSection3TSMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
@@ -4915,4 +4883,8 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents TranlatorsignatureToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExcelOpenFileDialog As OpenFileDialog
+    Friend WithEvents ExportMenuStrip As ContextMenuStrip
+    Friend WithEvents ExporttoExcelFromGrid As ToolStripMenuItem
+    Friend WithEvents TranscriptToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -52,10 +52,11 @@ Partial Class F_Mapping
         Me.FieldMappingGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.FieldMappingGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.FieldMappingGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
-        Me.FieldMappingGV.Location = New System.Drawing.Point(12, 78)
+        Me.FieldMappingGV.Location = New System.Drawing.Point(18, 120)
+        Me.FieldMappingGV.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.FieldMappingGV.Name = "FieldMappingGV"
         Me.FieldMappingGV.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FieldMappingGV.Size = New System.Drawing.Size(821, 638)
+        Me.FieldMappingGV.Size = New System.Drawing.Size(1232, 635)
         Me.FieldMappingGV.TabIndex = 0
         '
         'Column1
@@ -83,27 +84,30 @@ Partial Class F_Mapping
         '
         Me.ForeginKeyComboBox.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeginKeyComboBox.FormattingEnabled = True
-        Me.ForeginKeyComboBox.Location = New System.Drawing.Point(199, 49)
+        Me.ForeginKeyComboBox.Location = New System.Drawing.Point(298, 75)
+        Me.ForeginKeyComboBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ForeginKeyComboBox.Name = "ForeginKeyComboBox"
-        Me.ForeginKeyComboBox.Size = New System.Drawing.Size(187, 23)
+        Me.ForeginKeyComboBox.Size = New System.Drawing.Size(278, 32)
         Me.ForeginKeyComboBox.TabIndex = 1
         '
         'PrimaryKeyComboBox
         '
         Me.PrimaryKeyComboBox.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PrimaryKeyComboBox.FormattingEnabled = True
-        Me.PrimaryKeyComboBox.Location = New System.Drawing.Point(199, 12)
+        Me.PrimaryKeyComboBox.Location = New System.Drawing.Point(298, 18)
+        Me.PrimaryKeyComboBox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PrimaryKeyComboBox.Name = "PrimaryKeyComboBox"
-        Me.PrimaryKeyComboBox.Size = New System.Drawing.Size(187, 23)
+        Me.PrimaryKeyComboBox.Size = New System.Drawing.Size(278, 32)
         Me.PrimaryKeyComboBox.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(15, 15)
+        Me.Label1.Location = New System.Drawing.Point(22, 23)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(152, 15)
+        Me.Label1.Size = New System.Drawing.Size(228, 24)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Primary Key (Excel Source)"
         '
@@ -111,18 +115,20 @@ Partial Class F_Mapping
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(15, 52)
+        Me.Label2.Location = New System.Drawing.Point(22, 80)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(178, 15)
+        Me.Label2.Size = New System.Drawing.Size(272, 24)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "ForeginKey (Roster Destination)"
         '
         'RunButton
         '
         Me.RunButton.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RunButton.Location = New System.Drawing.Point(756, 9)
+        Me.RunButton.Location = New System.Drawing.Point(1134, 14)
+        Me.RunButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RunButton.Name = "RunButton"
-        Me.RunButton.Size = New System.Drawing.Size(76, 27)
+        Me.RunButton.Size = New System.Drawing.Size(114, 42)
         Me.RunButton.TabIndex = 5
         Me.RunButton.Text = "Run"
         Me.RunButton.UseVisualStyleBackColor = True
@@ -130,18 +136,20 @@ Partial Class F_Mapping
         'CloseButton
         '
         Me.CloseButton.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CloseButton.Location = New System.Drawing.Point(756, 42)
+        Me.CloseButton.Location = New System.Drawing.Point(1134, 65)
+        Me.CloseButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CloseButton.Name = "CloseButton"
-        Me.CloseButton.Size = New System.Drawing.Size(76, 27)
+        Me.CloseButton.Size = New System.Drawing.Size(114, 42)
         Me.CloseButton.TabIndex = 6
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
         '
         'F_Mapping
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(844, 728)
+        Me.ClientSize = New System.Drawing.Size(1266, 815)
+        Me.ControlBox = False
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.RunButton)
         Me.Controls.Add(Me.Label2)
@@ -149,7 +157,10 @@ Partial Class F_Mapping
         Me.Controls.Add(Me.PrimaryKeyComboBox)
         Me.Controls.Add(Me.ForeginKeyComboBox)
         Me.Controls.Add(Me.FieldMappingGV)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "F_Mapping"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Roster Overlay"
         CType(Me.FieldMappingGV, System.ComponentModel.ISupportInitialize).EndInit()

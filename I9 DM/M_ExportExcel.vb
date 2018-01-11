@@ -1,5 +1,6 @@
 ﻿Imports Excel = Microsoft.Office.Interop.Excel
 Imports System.Runtime.InteropServices
+Imports System.IO
 Module M_ExportExcel
     'Path for getting the file that you need to get the empty spreadsheet
     Dim resourcesFolder = IO.Path.GetFullPath(Application.StartupPath & "\Resources\")
@@ -8,19 +9,27 @@ Module M_ExportExcel
     Dim fileName = "Empty.xlsx"
 
     Public Sub Export_Excel(DGV As DataGridView)
-        '**********************************************
+        '**************************************
         '  Public Sub to Export the Grid view to Excel
-        '**********************************************
+        '*************************************
         Dim xlApp As New Excel.Application
         Dim Worksheet As Excel.Worksheet
         Dim Workbook As Excel.Workbook
         Dim colIndex As Integer = 0
         Dim rowIndex As Integer = 0
         Dim Proc As System.Diagnostics.Process
+        Dim misValue As Object = System.Reflection.Missing.Value
 
         Try
+            'Test to make sure Excel is installed correctly
+            If xlApp Is Nothing Then
+                MessageBox.Show("Excel is not properly installed!!")
+                Exit Sub
+            End If
+
             'Open the spreadsheet file
-            Workbook = xlApp.Workbooks.Open(resourcesFolder & fileName)
+            'Workbook = xlApp.Workbooks.Open(resourcesFolder & fileName)
+            Workbook = xlApp.Workbooks.Add(misValue)
             Worksheet = Workbook.Worksheets("Sheet1")
 
             ' Loop thru the Column headers and write to Excel
@@ -97,6 +106,32 @@ Module M_ExportExcel
             GC.Collect()
             GC.WaitForPendingFinalizers()
         End Try
+
+    End Sub
+
+    Public Sub Export_Grid_Text_File(DGV As DataGridView)
+        '*****************************************
+        'Public Sub to Export the Grid view to a Text File
+        '*****************************************
+
+        'Save the Text file to a user location
+        Using SFD As New SaveFileDialog
+            If SFD.ShowDialog() = DialogResult.OK Then
+                DGV.AllowUserToAddRows = False
+                Using writer As New StreamWriter(SFD.FileName)
+                    For iRow As Integer = 0 To DGV.Rows.Count - 1
+                        For iCol As Integer = 0 To DGV.Columns.Count - 1
+                            If iCol > 0 Then writer.Write(",")
+                            writer.Write(Chr(34) & "{0}" & Chr(34), DGV.Rows(iRow).Cells(iCol).Value)
+                        Next
+                        writer.WriteLine()
+                    Next
+                    writer.Close()
+                End Using
+                MessageBox.Show("Exported Text File Saved to " & vbCrLf & SFD.FileName, "Save Exported File")
+            End If
+            DGV.AllowUserToAddRows = True
+        End Using
 
     End Sub
 
