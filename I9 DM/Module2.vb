@@ -185,9 +185,9 @@
             " [Section 2 Header Last Name] TEXT(255),[Section 2 Header First Name] TEXT(255),[Section 2 Header Middle Initial] TEXT(255),[Section 2 Header Immigration Status] TEXT(255),[Document Title List A] TEXT(255),[Issuing Authority (A)] TEXT(255)," &
             " [Document Number (A1)] TEXT(255),[Expiration Date (A1)] TEXT(255),[Document Title List (A2)] TEXT(255),[Issuing Authority (A2)] TEXT(255),[Document Number (A2)] TEXT(255),[Expiration Date (A2)] TEXT(255),[Document List (A3)] TEXT(255), " &
             " [Issuing Authority (A3)] TEXT(255),[Document Number (A3)] TEXT(255),[Expiration Date (A3)] TEXT(255),[Document Title List (B)] TEXT(255),[Issuing Authority (B)] TEXT(255),[Document Number (B)] TEXT(255),[Expiration Date (B)] TEXT(255)," &
-            " [Document Title List (C)] TEXT(255),[Issuing Authority (C)] TEXT(255),[Document Number (C)] TEXT(255),[Expiration Date (C)] TEXT(255),[Section 2 Addition Info] TEXT(255),[Employee Start Date] TEXT(255),[Superivsor Signature] TEXT(255), " &
+            " [Document Title List (C)] TEXT(255),[Issuing Authority (C)] TEXT(255),[Document Number (C)] TEXT(255),[Expiration Date (C)] TEXT(255),[Section 2 Addition Info] TEXT(255),[Employee Start Date] TEXT(255),[Supervisor Signature] TEXT(255), " &
             " [Supervisor Print/Last Name] TEXT(255),[Supervisor First Name] TEXT(255),[Supervisor Title] TEXT(255),[Business Name] TEXT(255),[Business Address] TEXT(255),[Business City] TEXT(255),[Business State] TEXT(255),[Business Zip] TEXT(255), " &
-            " [Supervisor Signed Date] TEXT(255),[Employee New Last Name (Section 3)] TEXT(255),[Employee First Name (Section 3)] TEXT(255),[Employee Middle Inital (Section 3)] TEXT(255),[Date of Rehire (Section 3)] TEXT(255),[Document Title (Section 3)] TEXT(255), " &
+            " [Supervisor Signed Date] TEXT(255),[Employee New Last Name (Section 3)] TEXT(255),[Employee First Name (Section 3)] TEXT(255),[Employee Middle Initial (Section 3)] TEXT(255),[Date of Rehire (Section 3)] TEXT(255),[Document Title (Section 3)] TEXT(255), " &
             " [Document Number (Section 3)] TEXT(255),[Document Expiration Date (Section 3)] TEXT(255),[Supervisor Signature (Section 3)] TEXT(255),[Supervisor Signed Date (Section 3)] TEXT(255),[Supervisor Print Name (Section 3)] TEXT(255)," &
             " [Handwritten data in margins] TEXT(255),[Form Version] TEXT(255),[I-9 Folder] TEXT(255),[I-9 Document Name] TEXT(255),[I-9 Document Name 2] TEXT(255),[Supporting Doc 1 Name] TEXT(255),[Supporting Doc 2 Name] TEXT(255), " &
             " [Supporting Doc 3 Name] TEXT(255),[Supporting Doc 4 Name] TEXT(255),[Supporting Doc 5 Name] TEXT(255),[Supporting Doc 6 Name] TEXT(255),[Supporting Doc 7 Name] TEXT(255),[Supporting Doc 8 Name] TEXT(255),[Supporting Doc 9 Name] TEXT(255), " &
@@ -229,9 +229,9 @@
             " [Translator Signed Date],[Section 2 Header Last Name],[Section 2 Header First Name],[Section 2 Header Middle Initial],[Section 2 Header Immigration Status],[Document Title List A],[Issuing Authority (A)], " &
             " [Document Number (A1)],[Expiration Date (A1)],[Document Title List (A2)],[Issuing Authority (A2)],[Document Number (A2)],[Expiration Date (A2)],[Document List (A3)],[Issuing Authority (A3)], " &
             " [Document Number (A3)],[Expiration Date (A3)],[Document Title List (B)],[Issuing Authority (B)],[Document Number (B)],[Expiration Date (B)],[Document Title List (C)],[Issuing Authority (C)], " &
-            " [Document Number (C)],[Expiration Date (C)],[Section 2 Addition Info],[Employee Start Date],[Superivsor Signature],[Supervisor Print/Last Name],[Supervisor First Name],[Supervisor Title], " &
+            " [Document Number (C)],[Expiration Date (C)],[Section 2 Addition Info],[Employee Start Date],[Supervisor Signature],[Supervisor Print/Last Name],[Supervisor First Name],[Supervisor Title], " &
             " [Business Name],[Business Address],[Business City],[Business State],[Business Zip],[Supervisor Signed Date],[Employee New Last Name (Section 3)],[Employee First Name (Section 3)], " &
-            " [Employee Middle Inital (Section 3)],[Date of Rehire (Section 3)],[Document Title (Section 3)],[Document Number (Section 3)],[Document Expiration Date (Section 3)],[Supervisor Signature (Section 3)], " &
+            " [Employee Middle Initial (Section 3)],[Date of Rehire (Section 3)],[Document Title (Section 3)],[Document Number (Section 3)],[Document Expiration Date (Section 3)],[Supervisor Signature (Section 3)], " &
             " [Supervisor Signed Date (Section 3)],[Supervisor Print Name (Section 3)],[Handwritten data in margins],[Form Version],[I-9 Folder],[I-9 Document Name],[I-9 Document Name 2],[Supporting Doc 1 Name], " &
             " [Supporting Doc 2 Name],[Supporting Doc 3 Name],[Supporting Doc 4 Name],[Supporting Doc 5 Name],[Supporting Doc 6 Name],[Supporting Doc 7 Name],[Supporting Doc 8 Name],[Supporting Doc 9 Name],[Supporting Doc 10 Name], " &
             " [Supporting Doc 11 Name],[Supporting Doc 12 Name],[Supporting Doc 13 Name],[Supporting Doc 14 Name],[Supporting Doc 15 Name],[Supporting Doc 16 Name],[Supporting Doc 17 Name], " &
@@ -249,10 +249,10 @@
             " [" & TransTempTable & "].[Document Title List (A2)],[" & TransTempTable & "].[Issuing Authority (A2)],[" & TransTempTable & "].[Document Number (A2)],[" & TransTempTable & "].[Expiration Date (A2)],[" & TransTempTable & "].[Document List (A3)], " &
             " [" & TransTempTable & "].[Issuing Authority (A3)],[" & TransTempTable & "].[Document Number (A3)],[" & TransTempTable & "].[Expiration Date (A3)],[" & TransTempTable & "].[Document Title List (B)], " &
             " [" & TransTempTable & "].[Issuing Authority (B)],[" & TransTempTable & "].[Document Number (B)],[" & TransTempTable & "].[Expiration Date (B)],[" & TransTempTable & "].[Document Title List (C)],[" & TransTempTable & "].[Issuing Authority (C)],  " &
-            " [" & TransTempTable & "].[Document Number (C)],[" & TransTempTable & "].[Expiration Date (C)],[" & TransTempTable & "].[Section 2 Addition Info],[" & TransTempTable & "].[Employee Start Date],[" & TransTempTable & "].[Superivsor Signature], " &
+            " [" & TransTempTable & "].[Document Number (C)],[" & TransTempTable & "].[Expiration Date (C)],[" & TransTempTable & "].[Section 2 Addition Info],[" & TransTempTable & "].[Employee Start Date],[" & TransTempTable & "].[Supervisor Signature], " &
             " [" & TransTempTable & "].[Supervisor Print/Last Name],[" & TransTempTable & "].[Supervisor First Name],[" & TransTempTable & "].[Supervisor Title],[" & TransTempTable & "].[Business Name],[" & TransTempTable & "].[Business Address], " &
             " [" & TransTempTable & "].[Business City],[" & TransTempTable & "].[Business State],[" & TransTempTable & "].[Business Zip],[" & TransTempTable & "].[Supervisor Signed Date],[" & TransTempTable & "].[Employee New Last Name (Section 3)], " &
-            " [" & TransTempTable & "].[Employee First Name (Section 3)],[" & TransTempTable & "].[Employee Middle Inital (Section 3)],[" & TransTempTable & "].[Date of Rehire (Section 3)],[" & TransTempTable & "].[Document Title (Section 3)], " &
+            " [" & TransTempTable & "].[Employee First Name (Section 3)],[" & TransTempTable & "].[Employee Middle Initial (Section 3)],[" & TransTempTable & "].[Date of Rehire (Section 3)],[" & TransTempTable & "].[Document Title (Section 3)], " &
             " [" & TransTempTable & "].[Document Number (Section 3)],[" & TransTempTable & "].[Document Expiration Date (Section 3)],[" & TransTempTable & "].[Supervisor Signature (Section 3)],[" & TransTempTable & "].[Supervisor Signed Date (Section 3)], " &
             " [" & TransTempTable & "].[Supervisor Print Name (Section 3)],[" & TransTempTable & "].[Handwritten data in margins],[" & TransTempTable & "].[Form Version],[" & TransTempTable & "].[I-9 Folder]," &
             " [" & TransTempTable & "].[I-9 Document Name],[" & TransTempTable & "].[I-9 Document Name 2],[" & TransTempTable & "].[Supporting Doc 1 Name],[" & TransTempTable & "].[Supporting Doc 2 Name],[" & TransTempTable & "].[Supporting Doc 3 Name], " &
@@ -314,9 +314,9 @@
             " [Expiration Date (A2)] TEXT(255), [Document List (A3)] TEXT(255), [Issuing Authority (A3)] TEXT(255), [Document Number (A3)] TEXT(255), [Expiration Date (A3)] TEXT(255), " &
             " [Document Title List (B)] TEXT(255), [Issuing Authority (B)] TEXT(255), [Document Number (B)] TEXT(255), [Expiration Date (B)] TEXT(255), [Document Title List (C)] TEXT(255), " &
             " [Issuing Authority (C)] TEXT(255), [Document Number (C)] TEXT(255), [Expiration Date (C)] TEXT(255), [Section 2 Addition Info] TEXT(255), " &
-            " [Employee Start Date] TEXT(255), [Superivsor Signature] TEXT(255), [Supervisor Print/Last Name] TEXT(255), [Supervisor First Name] TEXT(255), " &
+            " [Employee Start Date] TEXT(255), [Supervisor Signature] TEXT(255), [Supervisor Print/Last Name] TEXT(255), [Supervisor First Name] TEXT(255), " &
             " [Supervisor Title] TEXT(255), [Business Name] TEXT(255), [Business Address] TEXT(255), [Business City] TEXT(255),  [Business State] TEXT(255), [Business Zip] TEXT(255), " &
-            " [Supervisor Signed Date] TEXT(255), [Employee New Last Name (Section 3)] TEXT(255), [Employee First Name (Section 3)] TEXT(255), [Employee Middle Inital (Section 3)] TEXT(255)," &
+            " [Supervisor Signed Date] TEXT(255), [Employee New Last Name (Section 3)] TEXT(255), [Employee First Name (Section 3)] TEXT(255), [Employee Middle Initial (Section 3)] TEXT(255)," &
             " [Date of Rehire (Section 3)] TEXT(255), [Document Title (Section 3)] TEXT(255), [Document Number (Section 3)] TEXT(255), [Document Expiration Date (Section 3)] TEXT(255), " &
             " [Supervisor Signature (Section 3)] TEXT(255), [Supervisor Signed Date (Section 3)] TEXT(255), [Supervisor Print Name (Section 3)] TEXT(255), [Handwritten data in margins] MEMO, " &
             " [Form Version] TEXT(255), [I-9 Folder] TEXT(255), [I-9 Document Name] MEMO, [I-9 Document Name 2] MEMO, [Supporting Doc 1 Name] MEMO, [Supporting Doc 2 Name] MEMO, " &
@@ -371,5 +371,44 @@
         End Try
 
     End Sub
+
+    Public Sub Read_CSV_File()
+        '    Dim SR As StreamReader = New StreamReader("your csv file path")
+        '    Dim line As String = SR.ReadLine()
+        '    Dim strArray As String() = line.Split(","c)
+        '    Dim dt As DataTable = New DataTable()
+        '    Dim row As DataRow
+
+        '    For Each s As String In strArray
+        '        dt.Columns.Add(New DataColumn())
+        '    Next
+
+        '    Do
+        '        line = SR.ReadLine
+        '        If Not line = String.Empty Then
+        '            row = dt.NewRow()
+        '            row.ItemArray = line.Split(","c)
+        '            dt.Rows.Add(row)
+        '        Else
+        '            Exit Do
+        '        End If
+        '    Loop
+        'End Sub
+
+        'Using cn As New SqlConnection(ConfigurationManager.ConnectionStrings("ConsoleApplication3.Properties.Settings.daasConnectionString").ConnectionString)
+        '    cn.Open()
+        '    Using copy As New SqlBulkCopy(cn)
+        '        copy.ColumnMappings.Add(0, 0)
+        '        copy.ColumnMappings.Add(1, 1)
+        '        copy.ColumnMappings.Add(2, 2)
+        '        copy.ColumnMappings.Add(3, 3)
+        '        copy.ColumnMappings.Add(4, 4)
+        '        copy.DestinationTableName = "Censis"
+        '        copy.WriteToServer(dt)
+        '    End Using
+        'End Using
+
+    End Sub
+
 
 End Module

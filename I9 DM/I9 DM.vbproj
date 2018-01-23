@@ -53,7 +53,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -110,11 +112,11 @@
     <Compile Include="M_ListView_Stats.vb" />
     <Compile Include="M_ExportExcel.vb" />
     <Compile Include="M_LoadCombo.vb" />
-    <Compile Include="M_Load_Roster_Grid.vb" />
+    <Compile Include="Roster\M_Load_Roster_Grid.vb" />
     <Compile Include="M_Other.vb" />
-    <Compile Include="M_SSN_QC.vb" />
-    <Compile Include="M_Date_QC.vb" />
-    <Compile Include="M_CheckTables.vb" />
+    <Compile Include="QC Modules\M_SSN_QC.vb" />
+    <Compile Include="QC Modules\M_Date_QC.vb" />
+    <Compile Include="QC Modules\M_CheckTables.vb" />
     <Compile Include="M_Variables.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -153,6 +155,7 @@
     <EmbeddedResource Include="F_Splash.resx">
       <DependentUpon>F_Splash.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -235,7 +238,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Roster\" />
     <Folder Include="Transcription\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

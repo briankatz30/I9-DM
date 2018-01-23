@@ -1,4 +1,5 @@
 ﻿Module M_SSN_QC
+
     Public Sub Roster_QC_SSN()
         '**************************************
         ' Sub to QC SSN numbers in the Roster Table
@@ -122,7 +123,7 @@
                         Rs.Open("SELECT [SSN DESCRIPTION], [SSN ERROR] FROM [ROSTER] WHERE " &
                          " [EMPLOYEE SS#] = '" & DUPSSN & "' ;", RosterSSNConnection, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockOptimistic)
                         Do While Not Rs.EOF
-                            'Reset the Error Messsge
+                            'Reset the Error Message
                             ErrorMsg = ""
                             'Log the Dup error
                             SSNDesc = If(IsDBNull(Rs.Fields.Item("SSN DESCRIPTION").Value), String.Empty, Rs.Fields.Item("SSN DESCRIPTION").Value)
@@ -162,7 +163,7 @@
 
     Public Sub Roster_SSN_View()
         '***********************************************************************
-        ' Sub to Change the the Roster Grid View to just show SSN Errors From the Roster Table
+        ' Sub to Change the Roster Grid View to just show SSN Errors From the Roster Table
         '***********************************************************************
 
         Dim ConnectionString As String

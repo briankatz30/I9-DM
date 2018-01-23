@@ -133,8 +133,8 @@ Public Class Form_Project
                             ObjReader = Nothing
                             Rs.Close()
 
-                            'Displays the Messsge Box that the project was added to the Project Table
-                            c = MsgBox("Project was created successfully....", vbOKOnly, "Created Sucessfully")
+                            'Displays the Message Box that the project was added to the Project Table
+                            c = MsgBox("Project was created successfully....", vbOKOnly, "Created Successfully")
                         End If
                     End If
 
@@ -203,8 +203,8 @@ Public Class Form_Project
                     Rs.Update()
                     Rs.Close()
 
-                    'Displays the Messsge Box that the project was saved to the Project Table
-                    c = MsgBox("Project was saved successfully....", vbOKOnly, "Saved Sucessfully")
+                    'Displays the Message Box that the project was saved to the Project Table
+                    c = MsgBox("Project was saved successfully....", vbOKOnly, "Saved Successfully")
 
                 Case = "Delete"
                     'Gets what the user has selected

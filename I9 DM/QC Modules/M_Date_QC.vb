@@ -1,7 +1,7 @@
 ﻿Module M_Date_QC
     Public Sub Roster_QC_Check_Dates()
         '**********************************************
-        ' Sub Rountine to QC Dates from the Roster Table
+        ' Sub Routine to QC Dates from the Roster Table
         '**********************************************
         Dim RosterConnection As New ADODB.Connection
         Dim Roster_Connection As String
@@ -61,7 +61,7 @@
                 Else
                     ' We have data in the field Check and now see if it is a true date
                     If IsDate(DOB) Then
-                        ' Caluclate the age for DOB under 16
+                        ' Calculate the age for DOB under 16
                         Age = DateDiff("yyyy", CDate(DOB), Now())
                         If Age > 16 Then
                             ' Record is good on age write and format the date into the DOB field
@@ -81,7 +81,7 @@
                             RosterRs.Update()
                         End If
                     Else
-                        ' Log the Errror
+                        ' Log the Error
                         DateDesc = If(IsDBNull(RosterRs.Fields.Item("DATE DESCRIPTION").Value), String.Empty, RosterRs.Fields.Item("DATE DESCRIPTION").Value)
                         If DateDesc = "" Then
                             ErrorMsg = ""
@@ -127,7 +127,7 @@
                             RosterRs.Update()
                         End If
                     Else
-                        ' Log the errror in the record
+                        ' Log the error in the record
                         DateDesc = If(IsDBNull(RosterRs.Fields.Item("DATE DESCRIPTION").Value), String.Empty, RosterRs.Fields.Item("DATE DESCRIPTION").Value)
                         If DateDesc = "" Then
                             ErrorMsg = ""
@@ -167,7 +167,7 @@
                         RosterRs.Fields.Item("Terminated Date").Value = Format(CDate(TermDate), "M/d/yyyy")
                         RosterRs.Update()
                     Else
-                        ' Log the errror in the record
+                        ' Log the error in the record
                         If IsDate(CDate(TermDate)) Or TermDate = "" Then
                             ' Good Date
                         Else
@@ -207,7 +207,7 @@
 
     Public Sub Roster_Date_View()
         '***********************************************************************************
-        ' Popup Menu Item to change the the Roster Grid View to just show Date Errors From the Roster Table
+        ' Popup Menu Item to change the Roster Grid View to just show Date Errors From the Roster Table
         '***********************************************************************************
 
         Dim ConnectionString As String
@@ -264,7 +264,7 @@
             RosterConnection, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockOptimistic)
             RosterRs.MoveFirst()
 
-            ' Loop through the Recordset loking at the DOB Field
+            ' Loop through the Recordset looking at the DOB Field
             Do While Not RosterRs.EOF
                 ' Need to check if Fields are Null
                 DOB = If(IsDBNull(RosterRs.Fields.Item("EMPLOYEE DATE OF BIRTH").Value), String.Empty, RosterRs.Fields.Item("EMPLOYEE DATE OF BIRTH").Value)

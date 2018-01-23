@@ -8,7 +8,7 @@ Module M_CheckTables
     '*********************************************************************************************
     Public Sub Load_GridViews()
         '****************************************************
-        '  Public Sub Routine to load all the Gridviews on the Main Form
+        '  Public Sub Routine to load all the GridViews on the Main Form
         '****************************************************
         Dim oledbAdapter As OleDbDataAdapter
         Dim I9S As New DataSet
@@ -45,7 +45,7 @@ Module M_CheckTables
             Form1.I9DataGridView.Columns("2 Page Flag").Visible = False
             Form1.I9DataGridView.Columns("Section 3 Flag").Visible = False
 
-            'Loads Records that have no match between thr roster and I9 Table
+            'Loads Records that have no match between the roster and I9 Table
             Form1.ToolStripStatusLabel2.Text = "Loading Non Matching Data...."
             oledbAdapter = New OleDbDataAdapter("EXEC [dbo].SP_I9_MATCHISNULL", Client_Conn)
             oledbAdapter.Fill(NotMatch)
@@ -71,6 +71,7 @@ Module M_CheckTables
             RosterMatch = Form1.DGVRosterMatch.Rows.Count - 1
 
             Form1.ToolStripStatusLabel2.Text = "Getting Roster Statistics.."
+
             'Get the Stats from the Roster Table and Loads them into the Roster ListView
             Get_Stats_Roster()
 

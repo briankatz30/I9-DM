@@ -1,5 +1,6 @@
 ﻿
 Module M_ListView_Stats
+
     Dim BadDateCount, BadSSNCount, BadOtherCount, AllBadCount, BadTotalRosterCount As Integer
     Dim TotalRosterCount As Integer
     Dim TotalTransCount As Integer
@@ -377,7 +378,6 @@ Module M_ListView_Stats
 
             'Housekeeping
             RosterConnection.Close()
-
 
             'Refreshes the columns that were just edited in the transcript table
             Form1.I9DataGridView.Refresh()

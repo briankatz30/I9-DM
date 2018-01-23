@@ -28,6 +28,7 @@ Public Class F_Mapping
         Dim i As Integer = 0
         Dim x As Integer
         Dim c As Integer = 0
+        Dim f As Integer
         Dim TestName As String = Nothing
         Dim FieldNames As String = Nothing
         Dim PrimaryKey, ForeignKey As String
@@ -35,7 +36,7 @@ Public Class F_Mapping
         Try
 
             'Need to add the first Column before we loop through
-            'the user selections to ge the Primary and Foreign Keys
+            'the user selections to get the Primary and Foreign Keys
             ForeignKey = "[ROSTER].[" & ForeginKeyComboBox.Text & "]"
             FieldNameList.Add(PrimaryKeyComboBox.Text)
 
@@ -48,7 +49,7 @@ Public Class F_Mapping
                 End If
             Next
 
-            'Adds the Primary Key from the combobox from the Spreadsheet
+            'Adds the Primary Key from the combo box from the Spreadsheet
             'First column will always be the primary Key Column
             SqlStmt = " SELECT [" & PrimaryKeyComboBox.Text & "], " & SqlStmt
 
@@ -56,13 +57,17 @@ Public Class F_Mapping
             SqlStmt = SqlStmt.Remove(SqlStmt.Length - 2)
             SqlStmt = SqlStmt & " FROM [SHEET1$] "
 
-            'Console.WriteLine(SqlStmt)
-
             'Create a connection string to Excel
-            MyConnection = New System.Data.OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source='" & RosterExcelFilePath & " '; " & "Extended Properties='Excel 8.0;HDR=Yes;IMEX=1;';")
+            MyConnection = New System.Data.OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0; Data Source='" & RosterExcelFilePath & " '; " & "Extended Properties='Excel 8.0;HDR=Yes;IMEX=1;';")
             MyCommand = New OleDbDataAdapter(SqlStmt, MyConnection)
             MyCommand.Fill(Ds)
             DTable = Ds.Tables(0)
+
+
+
+
+
+
 
             'Get the number of Columns that were selected
             x = DTable.Columns.Count - 1
@@ -73,7 +78,7 @@ Public Class F_Mapping
                     'All the Other Columns to Build the SQL Statement
                     FieldNames = FieldNames & FieldNameList.Item(i) & " = '" & DTable.Rows(c).Item(i) & "', "
                 Next
-                'String work on the SQL Statment
+                'String work on the SQL Statement
                 FieldNames = FieldNames.Remove(FieldNames.Length - 2)
                 FieldNames = "UPDATE ROSTER SET " & FieldNames & " WHERE " & ForeignKey & " = '" & PrimaryKey & "' ;"
                 Console.WriteLine(FieldNames)
@@ -93,7 +98,7 @@ Public Class F_Mapping
             Rs.Dispose()
             oledbAdapter.Dispose()
 
-            MsgBox("Roster Updated", vbInformation)
+            f = MsgBox("Roster Updated", vbOK And vbInformation)
 
             If FieldMappingGV.Columns.Contains("RosterColumnField") Then
                 FieldMappingGV.Columns.Remove("RosterColumnField")

@@ -1551,7 +1551,7 @@ Partial Class Form1
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(107, 15)
         Me.Label37.TabIndex = 64
-        Me.Label37.Text = "Foregin Passport #"
+        Me.Label37.Text = "Foreign Passport #"
         '
         'TextBox29
         '
@@ -2988,7 +2988,7 @@ Partial Class Form1
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(179, 15)
         Me.Label54.TabIndex = 75
-        Me.Label54.Text = "Citizenship / Immigraton Status"
+        Me.Label54.Text = "Citizenship / Immigration Status"
         '
         'Label56
         '
@@ -4452,6 +4452,7 @@ Partial Class Form1
         Me.ExporttoExcelFromGrid.Size = New System.Drawing.Size(150, 22)
         Me.ExporttoExcelFromGrid.Text = "Export to Excel"
         '
+
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4474,7 +4475,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
-        Me.Text = "Data Mirgation Utility"
+        Me.Text = "Data Migration Utility"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.RosterTab.ResumeLayout(False)

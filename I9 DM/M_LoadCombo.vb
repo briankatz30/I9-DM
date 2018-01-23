@@ -2,8 +2,8 @@
 Module M_LoadCombo
     Public Sub Load_Combo_Projects()
         '*******************************************************
-        ' Sub to load the Projects into the Comboboxes on the Main Form
-        ' and the Combobox on the Project Form reading the Main Project
+        ' Sub to load the Projects into the Combo Boxes on the Main Form
+        ' and the Combo Box on the Project Form reading the Main Project
         ' Database to load the Project Names into the ComboBoxes
         '*******************************************************
         Dim MyConn As New ADODB.Connection
@@ -13,7 +13,7 @@ Module M_LoadCombo
         SQLStr = "SELECT * FROM MAIN_LLX_PROJECT ORDER BY 2"
         Rs.Open(SQLStr, MyConn, CursorTypeEnum.adOpenKeyset)
 
-        'Load the Project Combo Box on the toolstrip with Project Names
+        'Load the Project Combo Box on the tool strip with Project Names
         Form1.TSProjectComboBox.Items.Clear()
         Form_Project.ProjectComboBox.Items.Clear()
         'Loop to Load from the table MAIN_LLX_PROJECT

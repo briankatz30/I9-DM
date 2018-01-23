@@ -31,7 +31,7 @@ Module M_Load_Files
             'Reads the Lines of the file before we import
             FsLineCount = FSO.OpenTextFile(FileName, IOMode:=Scripting.IOMode.ForReading, Create:=False, Format:=Scripting.Tristate.TristateFalse)
 
-            'Reads everyline of the File to import
+            'Reads every line of the File to import
             Do Until FsLineCount.AtEndOfStream
                 FsLineCount.ReadLine()
                 TotalLines = TotalLines + 1
@@ -110,7 +110,7 @@ Module M_Load_Files
             'Reads the Lines of the file before we import
             FsLineCount = FSO.OpenTextFile(FileName, IOMode:=Scripting.IOMode.ForReading, Create:=False, Format:=Scripting.Tristate.TristateFalse)
 
-            'Reads everyline of the File to import for the display of importing records
+            'Reads every line of the File to import for the display of importing records
             Do Until FsLineCount.AtEndOfStream
                 FsLineCount.ReadLine()
                 TotalLines = TotalLines + 1

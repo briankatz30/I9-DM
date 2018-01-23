@@ -22,7 +22,7 @@ Public Class Form1
         ' Sub from the popup menu to run the Date QC, SSN QC, 
         '  Other QC when the user selected Roster Table
         '**********************************************
-        'Changes the mousepointer to wait until the Grids Load
+        'Changes the mouse pointer to wait until the Grids Load
         Me.Cursor = Cursors.WaitCursor
 
         Me.Refresh()
@@ -42,7 +42,7 @@ Public Class Form1
 
         Me.Refresh()
         ToolStripStatusLabel2.Text = "Completed..."
-        'Changes the mousepointer back to default
+        'Changes the mouse pointer back to default
         Me.Cursor = Cursors.Default
 
     End Sub
@@ -110,7 +110,7 @@ Public Class Form1
         Dim row As DataGridViewRow = DGVNotMatchTrans.CurrentRow
         Dim I9RosterID As String
 
-        'Need to Grab the the image from I9 if it exsists
+        'Need to Grab the image from I9 if it exists
         I9RosterID = row.Cells(0).Value.ToString()
         View_Image(I9RosterID, "Transaction")
 
@@ -209,7 +209,7 @@ Public Class Form1
         Dim row As DataGridViewRow = I9DataGridView.CurrentRow
         Dim I9RosterID As String
 
-        'Need to Grab the the image from I9 if it exsists
+        'Need to Grab the image from I9 if it exists
         I9RosterID = row.Cells(0).Value.ToString()
         View_Image(I9RosterID, "Transaction")
 
@@ -313,7 +313,7 @@ Public Class Form1
 
     Private Sub MatchDataGridView_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles MatchDataGridView.CellEnter
         '**********************************************
-        ' Sub Routine to show the transcript data in the textboxes
+        ' Sub Routine to show the transcript data in the text boxes
         '**********************************************
         Dim row As DataGridViewRow = MatchDataGridView.CurrentRow
 
@@ -323,7 +323,7 @@ Public Class Form1
         'Change the cursor to wait
         Me.Cursor = Cursors.WaitCursor
 
-        'Need to Grab the the image from I9 if it exsists
+        'Need to Grab the image from I9 if it exists
         I9RosterID = MatchRow.Cells(0).Value.ToString()
         View_Image(I9RosterID, "Transaction")
 
@@ -333,8 +333,8 @@ Public Class Form1
         TextBox8.Text = row.Cells(14).Value.ToString()              'Alien Authorized
         TextBox9.Text = row.Cells(15).Value.ToString()              'Alien Registration
         TextBox28.Text = row.Cells(16).Value.ToString()             'Alien Admission
-        TextBox29.Text = row.Cells(17).Value.ToString()             'Foregin Passport
-        TextBox27.Text = row.Cells(18).Value.ToString()             'Foregin Country
+        TextBox29.Text = row.Cells(17).Value.ToString()             'Foreign Passport
+        TextBox27.Text = row.Cells(18).Value.ToString()             'Foreign Country
         TextBox31.Text = row.Cells(27).Value.ToString()             'Employee Signature
         TextBox30.Text = row.Cells(28).Value.ToString()             'Employee Signed Date
         TextBox33.Text = row.Cells(19).Value.ToString()             'Translator Setting
@@ -379,13 +379,13 @@ Public Class Form1
         'List  B
         TextBox60.Text = row.Cells(46).Value.ToString()                 'Document Title
         TextBox45.Text = row.Cells(47).Value.ToString()                 'Issuing Authority
-        TextBox59.Text = row.Cells(48).Value.ToString()                 'Doucment Number
+        TextBox59.Text = row.Cells(48).Value.ToString()                 'Document Number
         TextBox41.Text = row.Cells(49).Value.ToString()                 'Expiration Date
 
         'List C
         TextBox64.Text = row.Cells(50).Value.ToString()                 'Document Title
         TextBox63.Text = row.Cells(51).Value.ToString()                 'Issuing Authority
-        TextBox62.Text = row.Cells(52).Value.ToString()                 'Doucment Number
+        TextBox62.Text = row.Cells(52).Value.ToString()                 'Document Number
         TextBox61.Text = row.Cells(53).Value.ToString()                 'Expiration Date
 
         'Rest of the Text
@@ -422,26 +422,26 @@ Public Class Form1
         'Supporting Documents
         TextBox94.Text = row.Cells(81).Value.ToString()             'Supporting Doc 1
         TextBox93.Text = row.Cells(82).Value.ToString()             'Supporting Doc 2
-        TextBox92.Text = row.Cells(83).Value.ToString()             'Supoorting Doc 3
+        TextBox92.Text = row.Cells(83).Value.ToString()             'Supporting Doc 3
         TextBox91.Text = row.Cells(84).Value.ToString()             'Supporting Doc 4
         TextBox96.Text = row.Cells(85).Value.ToString()             'Supporting Doc 5
-        TextBox98.Text = row.Cells(86).Value.ToString()             'Supporing Doc 6
-        TextBox99.Text = row.Cells(87).Value.ToString()             'Supporing Doc 7
-        TextBox100.Text = row.Cells(88).Value.ToString()           'Supporing Doc 8
-        TextBox101.Text = row.Cells(89).Value.ToString()           'Supporing Doc 9
-        TextBox97.Text = row.Cells(90).Value.ToString()             'Supporing Doc 10
-        TextBox103.Text = row.Cells(91).Value.ToString()           'Supporing Doc 11
-        TextBox104.Text = row.Cells(92).Value.ToString()           'Supporing Doc 12
-        TextBox105.Text = row.Cells(93).Value.ToString()           'Supporing Doc 13
-        TextBox106.Text = row.Cells(94).Value.ToString()           'Supporing Doc 14
-        TextBox102.Text = row.Cells(95).Value.ToString()           'Supporing Doc 15
-        TextBox108.Text = row.Cells(96).Value.ToString()           'Supporing Doc 16
-        TextBox109.Text = row.Cells(97).Value.ToString()           'Supporing Doc 17
-        TextBox110.Text = row.Cells(98).Value.ToString()           'Supporing Doc 18
-        TextBox111.Text = row.Cells(99).Value.ToString()           'Supporing Doc 19
-        TextBox107.Text = row.Cells(100).Value.ToString()           'Supporing Doc 20
-        TextBox112.Text = row.Cells(101).Value.ToString()          'Supporing Doc 21
-        TextBox113.Text = row.Cells(102).Value.ToString()          'Supporing Doc 22
+        TextBox98.Text = row.Cells(86).Value.ToString()             'Supporting Doc 6
+        TextBox99.Text = row.Cells(87).Value.ToString()             'Supporting Doc 7
+        TextBox100.Text = row.Cells(88).Value.ToString()           'Supporting Doc 8
+        TextBox101.Text = row.Cells(89).Value.ToString()           'Supporting Doc 9
+        TextBox97.Text = row.Cells(90).Value.ToString()             'Supporting Doc 10
+        TextBox103.Text = row.Cells(91).Value.ToString()           'Supporting Doc 11
+        TextBox104.Text = row.Cells(92).Value.ToString()           'Supporting Doc 12
+        TextBox105.Text = row.Cells(93).Value.ToString()           'Supporting Doc 13
+        TextBox106.Text = row.Cells(94).Value.ToString()           'Supporting Doc 14
+        TextBox102.Text = row.Cells(95).Value.ToString()           'Supporting Doc 15
+        TextBox108.Text = row.Cells(96).Value.ToString()           'Supporting Doc 16
+        TextBox109.Text = row.Cells(97).Value.ToString()           'Supporting Doc 17
+        TextBox110.Text = row.Cells(98).Value.ToString()           'Supporting Doc 18
+        TextBox111.Text = row.Cells(99).Value.ToString()           'Supporting Doc 19
+        TextBox107.Text = row.Cells(100).Value.ToString()           'Supporting Doc 20
+        TextBox112.Text = row.Cells(101).Value.ToString()          'Supporting Doc 21
+        TextBox113.Text = row.Cells(102).Value.ToString()          'Supporting Doc 22
 
         'Change the cursor to Default
         Me.Cursor = Cursors.Default
@@ -612,34 +612,34 @@ Public Class Form1
         'Need this setting some records do have all the fields
         'On Error Resume Next
 
-        'Need to Grab the the image from I9 if it exsists
+        'Need to Grab the image from I9 if it exists
         RosterID = row.Cells(0).Value.ToString()
 
         'Load the image if the Transcript Matches the Roster
         View_Image(RosterID, "Roster")
 
+        TextBox6.Text = row.Cells(1).Value.ToString()               'Employee Number
         TextBox1.Text = row.Cells(2).Value.ToString()               'Last Name
         TextBox2.Text = row.Cells(3).Value.ToString()               'First Name
         TextBox3.Text = row.Cells(4).Value.ToString()               'Middle Name
         TextBox4.Text = row.Cells(5).Value.ToString()               'Maiden Name
-        TextBox6.Text = row.Cells(1).Value.ToString()               'Employee Number
+        TextBox16.Text = row.Cells(7).Value.ToString()              'Date of Birth
+        TextBox17.Text = row.Cells(8).Value.ToString()              'SSN
         TextBox10.Text = row.Cells(9).Value.ToString()             'Street Address
+        TextBox15.Text = row.Cells(10).Value.ToString()           'Employee Address # 2
         TextBox11.Text = row.Cells(11).Value.ToString()           'Apt #
         TextBox12.Text = row.Cells(12).Value.ToString()           'City
         TextBox13.Text = row.Cells(13).Value.ToString()           'State
         TextBox14.Text = row.Cells(14).Value.ToString()           'Zip Code
-        TextBox15.Text = row.Cells(10).Value.ToString()           'Employee Address # 2
-        TextBox16.Text = row.Cells(7).Value.ToString()              'Date of Birth
-        TextBox17.Text = row.Cells(8).Value.ToString()              'SSN
-        TextBox18.Text = row.Cells(22).Value.ToString()            'Email Address
-        TextBox19.Text = row.Cells(18).Value.ToString()            'Home Phone
-        TextBox21.Text = row.Cells(20).Value.ToString()            'Cell Phone
         TextBox20.Text = row.Cells(16).Value.ToString()            'Work Phone
-        TextBox22.Text = row.Cells(19).Value.ToString()            'Home Ext
         TextBox23.Text = row.Cells(17).Value.ToString()            'Work Ext
-        TextBox24.Text = row.Cells(21).Value.ToString()            'Cell Ext
-        TextBox25.Text = row.Cells(26).Value.ToString()            'Date of Hire
-        TextBox26.Text = row.Cells(27).Value.ToString()            'Term Date
+        TextBox19.Text = row.Cells(18).Value.ToString()            'Home Phone
+        TextBox22.Text = row.Cells(19).Value.ToString()            'Home Ext
+        TextBox21.Text = row.Cells(20).Value.ToString()            'Cell Phone
+        TextBox24.Text = row.Cells(21).Value.ToString()             'Cell Ext
+        TextBox18.Text = row.Cells(22).Value.ToString()            'Email Address
+        TextBox25.Text = row.Cells(23).Value.ToString()            'Date of Hire
+        TextBox26.Text = row.Cells(24).Value.ToString()            'Term Date
 
         SqlStr = "Select [ID], [Employee Last Name], [Employee First Name], [Employee Middle Initial], [Employee Maiden Name], [Employee Date Of Birth]," &
              " [Employee SS#], [Employee Address], [Employee Apt #], " &
@@ -902,7 +902,7 @@ Public Class Form1
         Dim cnn As New ADODB.Connection
         Dim strSql As String
 
-        'Gets what the user has selected from the combobox
+        'Gets what the user has selected from the combo box
         SelectedItem = TSProjectComboBox.SelectedItem.ToString
 
         'Need to get the selected project table information
@@ -928,11 +928,11 @@ Public Class Form1
 
             'Status Label for the Project Selected
             ProjectTStripStatusLabel.Text = "    Project -  " & SelectedItem & "  |  Guardian Version - " & GuardianVersion
-            'Changes the mousepointer to wait until the Grids Load
+            'Changes the mouse pointer to wait until the Grids Load
             Me.Cursor = Cursors.WaitCursor
             'Procedure to Check the Errors of the Roster Table data
             Load_GridViews()
-            'Changes the mousepointer back to default
+            'Changes the mouse pointer back to default
             Me.Cursor = Cursors.Default
 
         Catch ex As Exception
@@ -1126,7 +1126,7 @@ Public Class Form1
 
     Private Sub RosterOverlayTSMenuItem_Click(sender As Object, e As EventArgs) Handles RosterOverlayTSMenuItem.Click
         '******************************************************************
-        ' Sub Routine to open the Windows Dialog Box to get an Excel File for the overlay  
+        ' Sub Routine to open the Windows Dialog Box to get an CSV File for the overlay  
         '******************************************************************
         Try
             'Open the OpenFIleDialog Window
@@ -1140,9 +1140,9 @@ Public Class Form1
             Else
                 'Opens the Windows Dialog box to pick the Excel Spreadsheet
                 With ExcelOpenFileDialog
-                    .Title = "Select an Excel Spreadsheet to overlay"
-                    .DefaultExt = ".xlsx"
-                    .Filter = "Excel Files|*.xlsx| All Files |* .*"
+                    .Title = "Select a CSV File to overlay"
+                    .DefaultExt = ".csv"
+                    .Filter = "CSV Files|*.csv| All Files |* .*"
                     .FilterIndex = 1
                     If .ShowDialog = System.Windows.Forms.DialogResult.OK Then
                         StrFilePath = .FileName

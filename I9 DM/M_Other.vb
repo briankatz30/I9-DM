@@ -32,7 +32,7 @@
             If RsRoster.EOF Then
                 'All records have an ID update the Import Box
             Else
-                'Loop through the Empoyees with No IDs
+                'Loop through the Employees with No IDs
                 Do While Not RsRoster.EOF
                     OtherDesc = If(IsDBNull(RsRoster.Fields.Item("OTHER DESCRIPTION").Value), String.Empty, RsRoster.Fields.Item("OTHER DESCRIPTION").Value)
                     If OtherDesc = "" Then
@@ -59,7 +59,7 @@
             If RsRoster.EOF Then
                 'All records have a First Name
             Else
-                'Loop through the Empoyees with No First Name
+                'Loop through the Employees with No First Name
                 Do While Not RsRoster.EOF
                     OtherDesc = If(IsDBNull(RsRoster.Fields.Item("OTHER DESCRIPTION").Value), String.Empty, RsRoster.Fields.Item("OTHER DESCRIPTION").Value)
                     If OtherDesc = "" Then
@@ -69,7 +69,7 @@
                     Else
                         ErrorMsg = RsRoster.Fields.Item("OTHER DESCRIPTION").Value
                         RsRoster.Fields.Item("Other Error").Value = True
-                        RsRoster.Fields.Item("Other Description").Value = ErrorMsg & "Missing Employee Employee First Name : "
+                        RsRoster.Fields.Item("Other Description").Value = ErrorMsg & "Missing Employee First Name : "
                         RsRoster.Update()
                     End If
                     RsRoster.MoveNext()
@@ -85,7 +85,7 @@
             If RsRoster.EOF Then
                 'All records have a Last Name
             Else
-                'Loop through the Empoyees with No Last Name
+                'Loop through the Employees with No Last Name
                 Do While Not RsRoster.EOF
                     OtherDesc = If(IsDBNull(RsRoster.Fields.Item("OTHER DESCRIPTION").Value), String.Empty, RsRoster.Fields.Item("OTHER DESCRIPTION").Value)
                     If OtherDesc = "" Then
@@ -95,7 +95,7 @@
                     Else
                         ErrorMsg = RsRoster.Fields.Item("OTHER DESCRIPTION").Value
                         RsRoster.Fields.Item("Other Error").Value = True
-                        RsRoster.Fields.Item("Other Description").Value = ErrorMsg & "Missing Employee Employee Last Name : "
+                        RsRoster.Fields.Item("Other Description").Value = ErrorMsg & "Missing Employee Last Name : "
                         RsRoster.Update()
                     End If
                     RsRoster.MoveNext()
@@ -112,7 +112,7 @@
             If RsRoster.EOF Then
                 'All records have a Location Name \ Location
             Else
-                'Loop through the Empoyees with No Location Name \ Location
+                'Loop through the Employees with No Location Name \ Location
                 Do While Not RsRoster.EOF
                     OtherDesc = If(IsDBNull(RsRoster.Fields.Item("OTHER DESCRIPTION").Value), String.Empty, RsRoster.Fields.Item("OTHER DESCRIPTION").Value)
                     If OtherDesc = "" Then
@@ -133,23 +133,23 @@
             If GuardianVersion = "G1" Then
                 RosterConnection.Close()
                 RosterConnection.Open(Roster_Connection)
-                'Need to check for Occuption Class
+                'Need to check for Occupation Class
                 RsRoster.Open("SELECT [ID], [OTHER ERROR], [OTHER DESCRIPTION] FROM [ROSTER]  WHERE ([OCCUPATION CLASS] Is NULL OR [OCCUPATION CLASS = '') " &
                 ";", RosterConnection, ADODB.CursorTypeEnum.adOpenStatic, ADODB.LockTypeEnum.adLockOptimistic)
                 If RsRoster.EOF Then
-                    'All records have a Occuption Class
+                    'All records have a Occupation Class
                 Else
-                    'Loop through the Empoyees with No Occuption Class
+                    'Loop through the Employees with No Occupation Class
                     Do While Not RsRoster.EOF
                         OtherDesc = If(IsDBNull(RsRoster.Fields.Item("OTHER DESCRIPTION").Value), String.Empty, RsRoster.Fields.Item("OTHER DESCRIPTION").Value)
                         If OtherDesc = "" Then
                             RsRoster.Fields.Item("Other Error").Value = True
-                            RsRoster.Fields.Item("Other Description").Value = OtherDesc & " Missing Occuption Class :  "
+                            RsRoster.Fields.Item("Other Description").Value = OtherDesc & " Missing Occupation Class :  "
                             RsRoster.Update()
                         Else
                             ErrorMsg = RsRoster.Fields.Item("OTHER DESCRIPTION").Value
                             RsRoster.Fields.Item("Other Error").Value = True
-                            RsRoster.Fields.Item("Other Description").Value = ErrorMsg & "Missing Occuption Class : "
+                            RsRoster.Fields.Item("Other Description").Value = ErrorMsg & "Missing Occupation Class : "
                             RsRoster.Update()
                         End If
                         RsRoster.MoveNext()
@@ -170,7 +170,7 @@
     End Sub
     Public Sub Roster_Other_View()
         '*******************************************************************************
-        ' Menu Item to Change the the Roster Grid View to show just Other Errors From the Roster Table
+        ' Menu Item to Change the Roster Grid View to show just Other Errors From the Roster Table
         '*******************************************************************************
 
         Dim ConnectionString As String
@@ -211,7 +211,7 @@
 
     Public Sub Roster_All_View()
         '************************************************************************
-        ' Menu Item to Change the the Roster Grid View to show All Errors From the Roster Table
+        ' Menu Item to Change the Roster Grid View to show All Errors From the Roster Table
         '************************************************************************
 
         Dim ConnectionString As String
@@ -251,7 +251,7 @@
 
     Public Sub OrphanRecordCheck()
         '**********************************************
-        ' Menu Item for checking for Ophan Records and updating
+        ' Menu Item for checking for Orphan Records and updating
         ' the I9 table for review
         '**********************************************
         Dim Connection As New OleDbConnection(Client_Conn)
@@ -364,8 +364,6 @@
             cmd.Connection = Connection
             rowsAffected = cmd.ExecuteNonQuery()
             Connection.Close()
-
-
 
         Catch ex As Exception
             MsgBox(ex.ToString)
